@@ -1,0 +1,81 @@
+:root {
+    --primarna: #2563eb;
+    --pozadina: #f8fafc;
+    --kartica: #ffffff;
+    --tekst: #1e293b;
+    --ivica: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--pozadina);
+    color: var(--tekst);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.kontejner {
+    background: var(--kartica);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 480px; /* Malo smanjeno radi bolje stabilnosti */
+    box-sizing: border-box; /* Osigurava da padding ne širi kontejner */
+}
+
+h2 { text-align: center; color: var(--primarna); margin-bottom: 0.5rem; }
+.podnaslov { text-align: center; font-size: 0.9rem; color: #64748b; margin-bottom: 2rem; }
+
+.sekcija-unos { margin-bottom: 1.5rem; }
+.sekcija-unos label { display: block; margin-bottom: 0.8rem; font-weight: 600; }
+
+.grupa-unosa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tri jednake kolone */
+    gap: 15px;
+}
+
+input {
+    width: 100%; /* Da zauzme celu kolonu grida */
+    padding: 12px 5px;
+    border: 1px solid var(--ivica);
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    box-sizing: border-box; /* KLJUČNA ISPRAVKA: padding ulazi u širinu */
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primarna);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover { background-color: #1d4ed8; }
+button:active { transform: scale(0.98); }
+
+.skriveno { display: none; }
+
+#matematicka-analiza {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #eff6ff;
+    border-radius: 8px;
+    border-left: 4px solid var(--primarna);
+    line-height: 1.6;
+    word-wrap: break-word; /* Da tekst ne ispada */
+}
+
+.kontejner-grafika {
+    margin-top: 1.5rem;
+    height: 300}

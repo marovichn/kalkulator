@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvadratni Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="kontejner">
+    <h2>Kalkulator kvadratne jednačine</h2>
+    <p class="podnaslov">Rešavanje jednačine $ax^2 + bx + c = 0$</p>
+    
+    <div class="sekcija-unos">
+        <label>Unesite koeficijente:</label>
+        <div class="grupa-unosa">
+            <input type="number" id="koef_a" placeholder="a" value="1">
+            <input type="number" id="koef_b" placeholder="b" value="-3">
+            <input type="number" id="koef_c" placeholder="c" value="2">
+        </div>
+    </div>
+
+    <button id="dugmeResi">Izračunaj rešenja</button>
+
+    <div id="rezultati" class="skriveno">
+        <div id="matematicka-analiza">
+            <span id="mat-info"></span>
+        </div>
+        
+        <div class="kontejner-grafika">
+            <canvas id="grafikFunkcije"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

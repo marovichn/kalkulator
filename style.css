@@ -73,7 +73,7 @@ button:active { transform: scale(0.98); }
     border-radius: 8px;
     border-left: 4px solid var(--primarna);
     line-height: 1.6;
-    word-wrap: break-word; /* Da tekst ne ispada */
+    word-wrap: break-word;
 }
 
 .kontejner-grafika {

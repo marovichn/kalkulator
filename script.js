@@ -1,12 +1,10 @@
 let mojGrafik = null;
 
 document.getElementById('dugmeResi').addEventListener('click', function() {
-    // Preuzimanje vrednosti sa ekrana
     const a = parseFloat(document.getElementById('koef_a').value);
     const b = parseFloat(document.getElementById('koef_b').value);
     const c = parseFloat(document.getElementById('koef_c').value);
 
-    // Provera validnosti unosa
     if (isNaN(a) || isNaN(b) || isNaN(c)) {
         alert("Molimo unesite ispravne koeficijente.");
         return;
@@ -16,7 +14,6 @@ document.getElementById('dugmeResi').addEventListener('click', function() {
         return;
     }
 
-    // ANALITIČKO REŠAVANJE (Kvadratna formula)
     const diskriminanta = b * b - 4 * a * c;
     let tekstRezultata = "";
     let resenje1 = null, resenje2 = null;
@@ -43,12 +40,13 @@ document.getElementById('dugmeResi').addEventListener('click', function() {
                         x₂ = <b>${realniDeo} - ${imaginarniDeo}i</b>`;
     }
 
-    // Prikaz rezultata u HTML-u
+
+
     document.getElementById('mat-info').innerHTML = tekstRezultata;
     document.getElementById('rezultati').classList.remove('skriveno');
 
-    // CRTANJE GRAFIKA
-    const temeX = -b / (2 * a); // Centriramo grafik oko x-koordinate temena
+    // GRAFIK
+    const temeX = -b / (2 * a);
     nacrtajGrafik(a, b, c, temeX, resenje1, resenje2, diskriminanta);
 });
 
@@ -59,23 +57,19 @@ function nacrtajGrafik(a, b, c, centarX, r1, r2, D) {
     const opseg = 5; 
     const korak = 0.1;
 
-    // Generisanje tačaka za parabolu
     for (let trenutniX = centarX - opseg; trenutniX <= centarX + opseg; trenutniX += korak) {
         xVrednosti.push(trenutniX);
         yVrednosti.push(a * trenutniX * trenutniX + b * trenutniX + c);
     }
 
-    // Uništi stari grafik ako postoji
     if (mojGrafik) {
         mojGrafik.destroy();
     }
 
-    // Priprema tačaka za nule (samo ako su realne)
     const tackeNula = [];
     if (D >= 0 && r1 !== null) tackeNula.push({ x: r1, y: 0 });
     if (D > 0 && r2 !== null) tackeNula.push({ x: r2, y: 0 });
 
-    // Kreiranje novog grafikona pomoću Chart.js
     mojGrafik = new Chart(platno, {
         type: 'line',
         data: {

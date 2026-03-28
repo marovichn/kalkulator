@@ -23,8 +23,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 480px; /* Malo smanjeno radi bolje stabilnosti */
-    box-sizing: border-box; /* Osigurava da padding ne širi kontejner */
+    max-width: 480px; 
+    box-sizing: border-box; 
 }
 
 h2 { text-align: center; color: var(--primarna); margin-bottom: 0.5rem; }
@@ -35,18 +35,18 @@ h2 { text-align: center; color: var(--primarna); margin-bottom: 0.5rem; }
 
 .grupa-unosa {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tri jednake kolone */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
 input {
-    width: 100%; /* Da zauzme celu kolonu grida */
+    width: 100%; 
     padding: 12px 5px;
     border: 1px solid var(--ivica);
     border-radius: 8px;
     font-size: 1rem;
     text-align: center;
-    box-sizing: border-box; /* KLJUČNA ISPRAVKA: padding ulazi u širinu */
+    box-sizing: border-box; 
 }
 
 button {
@@ -79,3 +79,61 @@ button:active { transform: scale(0.98); }
 .kontejner-grafika {
     margin-top: 1.5rem;
     height: 300}
+
+.sekcija-uvod {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #333;
+}
+
+.sekcija-uvod h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.sekcija-uvod ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin-bottom: 20px;
+}
+
+.tab-dugmad { 
+    overflow: hidden; border: 1px solid #ccc; background-color: #4dafff; border-radius: 5px 5px 0 0; 
+}
+
+.tab-dugmad button { 
+    background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 10px 16px; transition: 0.3s;
+}
+
+.tab-dugmad button:hover { 
+    background-color: #3040d0;
+}
+
+.tab-dugmad button.active {
+     background-color: #2563eb; color: white;
+}
+
+.tab-sadrzaj { 
+    display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; max-height: 200px; overflow-y: auto; background: white; 
+}
+table {
+     width: 100%; border-collapse: collapse; font-family: monospace; font-size: 12px;
+}
+table th, table td {
+     border: 1px solid #ddd; padding: 8px; text-align: center; 
+}
+table th {
+ background-color: #f2f2f2; position: sticky; top: 0; 
+}

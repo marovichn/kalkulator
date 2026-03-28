@@ -6,6 +6,14 @@
     --ivica: #e2e8f0;
 }
 
+.navbar{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: var(--pozadina);
